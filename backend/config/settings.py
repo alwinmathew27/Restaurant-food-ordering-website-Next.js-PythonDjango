@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-y((+2@czg7!c$4n%j2n%orcso83j5z^=4yjz&6rx+^iimk1--g
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    "yourusername.pythonanywhere.com",
+    "alwinmathew.pythonanywhere.com",
 ]
 
 
