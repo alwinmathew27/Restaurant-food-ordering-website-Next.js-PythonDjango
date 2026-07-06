@@ -1,58 +1,77 @@
-"use client"
-import Image from "next/image"
-import Link from "next/link"
-import { useState } from "react"
+"use client";
 
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import Logo from "../../public/Logo/Food-undo.png";
 
 const Navbar = () => {
-    const [btnNameReact, setBtnNameReact] = useState("Login")
-    return (
-        <div className="h-20 px-4 md:px-8 lg:px-4 2xl:px-4 relative">
-            <div className="flex items-center justify-between md:hidden h-full ">
-                {/*mobile*/}
-                <Link href="/">
-                    <div className="text-2xl tracking-wide">FOODIE</div>
-                </Link>
-                {/* Theme toggle for mobile */}
-            </div>
-            {/* bigger screener */}
-            <div className="hidden md:flex items-center justify-between gap-8 h-full">
-                {/* Left */}
-                <div className="w-1/3 xl:w-1/2 flex items-center gap-12">
-                    {/* <Link href="/" className="flex items-center gap-3 ">
-                        <Image src="/Logo_img/s-logo.jpg" alt="logo" width={50} height={50} />
-                         <div className="text-2xl font-medium tracking-wide">CookedUp</div>
-                    </Link> */}
-                    <div className="hidden xl:flex gap-4">
-                        <Link href="/">Homepage</Link>
-                        <Link href="/">Shops</Link>
-                        <Link href="/">Deals</Link>
-                        <Link href="/">About</Link>
-                        <Link href="/">Contact</Link>
-                    </div>
-                </div>
-                {/* Right */}
-                <div className="w-2/3 flex items-center justify-between gap-8 relative">
-                    {/* <SearchBar />
-                    <NavIcons/> */}
-                    {/* Theme toggle for desktop */}
-                    <div className="ml-auto">
-                    </div>
-                </div>
-                <div>
-                    <button className="login"
-                        onClick={() => {
-                            btnNameReact === "Login" 
-                            ? setBtnNameReact("Logout")
-                               : setBtnNameReact("Login");
-                    }}>
-                        {btnNameReact}
-                    </button>
-                </div>
-            </div>
+  const [btnNameReact, setBtnNameReact] = useState("Login");
 
+  return (
+    <header className="sticky top-0 z-50 bg-white shadow-sm border-b">
+      <div className="max-w-7xl mx-auto h-20 px-6 flex items-center justify-between">
+        {/* Logo */}
+        <Link href="/" className="flex flex-col items-center">
+          <Image
+            src={Logo}
+            alt="Food Undo"
+            width={180}
+            height={70}
+            className="object-contain p-2 mt-4"
+          />
+        </Link>
+
+        {/* Menu */}
+        <nav className="hidden md:flex items-center gap-8 text-gray-700 font-medium">
+          <Link href="/" className="hover:text-orange-500 transition">
+            Home
+          </Link>
+
+          <Link href="/menu" className="hover:text-orange-500 transition">
+            Menu
+          </Link>
+
+          <Link href="/shops" className="hover:text-orange-500 transition">
+            Restaurants
+          </Link>
+
+          <Link href="/offers" className="hover:text-orange-500 transition">
+            Offers
+          </Link>
+
+          <Link href="/about" className="hover:text-orange-500 transition">
+            About
+          </Link>
+
+          <Link href="/contact" className="hover:text-orange-500 transition">
+            Contact
+          </Link>
+        </nav>
+
+        {/* Right Side */}
+        <div className="flex items-center gap-4">
+          <button className="relative">
+            🛒
+            <span className="absolute -top-2 -right-2 bg-orange-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+              2
+            </span>
+          </button>
+
+          <button
+            onClick={() =>
+              setBtnNameReact(
+                btnNameReact === "Login" ? "Logout" : "Login"
+              )
+            }
+            className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full transition"
+          >
+            {btnNameReact}
+          </button>
         </div>
-    )
-}
+      </div>
+    </header>
+  );
+};
 
-export default Navbar
+export default Navbar;

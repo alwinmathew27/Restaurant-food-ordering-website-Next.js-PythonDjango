@@ -5,7 +5,7 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {/* Company Info */}
                     <div>
-                        <h3 className="text-xl font-bold mb-4">kerala food</h3>
+                        <h3 className="text-xl font-bold mb-4">Food Undo</h3>
                         <p className="text-gray-400 mb-4">
                             Your neighborhood grocery store delivering fresh produce and quality products right to your doorstep.
                         </p>
@@ -76,7 +76,7 @@ const Footer = () => {
                 <div className="mt-8 pt-8 border-t border-gray-800">
                     <div className="flex flex-col md:flex-row justify-between items-center">
                         <p className="text-gray-400 text-sm">
-                            © 2024 CookedUp. All rights reserved.
+                            © 2024 foodundo. All rights reserved.
                         </p>
                         <div className="flex space-x-6 mt-4 md:mt-0">
                             <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
